@@ -11,15 +11,6 @@ const driveFullScreen = keyframes`
     100% { left: 100%; }
 `;
 
-const driveSmallScreen = keyframes`
- from {
-    left: -365px;
- }
- to {
-    left: 100%;
- }
-`;
-
 const pulse = keyframes`
     0% { opacity: 0.6; }
     50% { opacity: 1; }
@@ -118,7 +109,6 @@ export const AnimatedCar = styled(Car)`
   display: inline-block;
   position: absolute;
   animation: ${driveFullScreen} 8s infinite ease;
-  ${media.sm` animation: ${driveSmallScreen} 5s infinite ease-in-out;`};
   bottom: 0;
   .halo {
     animation: ${pulse} infinite 1s ease-in-out;
@@ -148,7 +138,9 @@ export const Road = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-  height: 50px;
+  height: 40px;
+  ${media.med` height: 50px;`};
+  ${media.lg` height: 50px;`};
   display: flex;
   justify-content: space-around;
 `;
@@ -156,7 +148,9 @@ export const Road = styled.div`
 export const RoadLine = styled.div`
   width: 30px;
   background-color: ${theme.carvana.yellow.primary};
-  height: 10px;
+  height: 7px;
+  ${media.med` height: 10px;`};
+  ${media.lg` height: 10px;`};
   border-radius: 3px;
   top: 15px;
   position: relative;
@@ -169,16 +163,20 @@ export const VendingInteriorStyled = styled(VendingInterior)`
 `;
 
 export const VendingWallDecor = styled.div`
-  top: 50px;
+  top: 68px;
   left: 30px;
+  ${media.med`top: 50px;`};
+  ${media.lg`top: 50px;`};
   position: absolute;
   display: flex;
   width: 90%;
   justify-content: space-around;
 
   div {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
+    ${media.med`width: 60px; height: 60px;`};
+    ${media.lg`width: 80px; height: 80px;`};
     border: 1px solid ${theme.carvana.gray.medium};
     background-repeat: no-repeat;
     background-position: center;
@@ -186,22 +184,41 @@ export const VendingWallDecor = styled.div`
   }
 
   .photoOne {
-    background-image: url('Partner1.png');
+    background-image: url('/Partner1.png');
   }
   .photoTwo {
-    background-image: url('Partner2.png');
+    background-image: url('/Partner2.png');
   }
   .photoThree {
-    background-image: url('Partner3.png');
+    background-image: url('/Partner3.png');
   }
 `;
 
-export const VendingWrapper = styled.div`
-  ${media.sm`display:none`};
+export const VendingExteriorWrapper = styled.svg`
+  width: 220px;
+  height: 200px;
+  ${media.med`width: 340px;height: 300px;`};
+  ${media.lg`width: 460px;height: 400px;`};
+`;
+
+export const CarWrapper = styled.svg`
+  width: 200px;
+  height: 100px;
+  ${media.med`width: 300px;height: 200px;`};
+  ${media.lg`width: 365px;height: 250px;`};
+`;
+
+export const VendingInteriorWrapper = styled.svg`
+  width: 215px;
+  height: 190px;
+  ${media.med`width: 342px;height: 219px;`};
+  ${media.lg`width: 452px;height: 305px;`};
 `;
 
 export const VendingExteriorStyled = styled(VendingExterior)`
-  height: 400px;
+  height: 200px;
+  ${media.med`height: 300px;`};
+  ${media.lg`height: 400px;`};
   position: absolute;
   bottom: 0;
   right: 0;
@@ -209,12 +226,16 @@ export const VendingExteriorStyled = styled(VendingExterior)`
     transform: scale(2.8);
   }
   .signBorder {
-    width: 350px;
-    height: 69px;
+    width: 160px;
+    height: 30px;
+    ${media.med` width: 245px;height: 50px;`};
+    ${media.lg` width: 350px;height: 69px;`};
     border: 3px solid ${theme.carvana.yellow.primary};
     animation: ${borderFlicker} 2s linear infinite;
-    left: 93px;
-    top: 13px;
+    left: 45px;
+    top: 10px;
+    ${media.med` top: 11px; left: 74px;`};
+    ${media.lg` top: 13px; left: 93px;`};
     border-radius: 3px;
     position: absolute;
   }

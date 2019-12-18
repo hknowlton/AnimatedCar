@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import theme from './theme';
+import { VendingExteriorWrapper } from './styles';
 
 const VendingExterior = ({ className }) => (
   <span className={className}>
     <div className="signBorder" />
-    <svg width="460" height="400">
+    <VendingExteriorWrapper viewBox="0 0 460 400">
       {/* roof */}
       <rect
         x="10"
@@ -95,7 +96,7 @@ const VendingExterior = ({ className }) => (
         strokeWidth="4"
         fill="transparent"
       />
-    </svg>
+    </VendingExteriorWrapper>
   </span>
 );
 

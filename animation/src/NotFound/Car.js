@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import theme from './theme';
+import { CarWrapper } from './styles';
 
 const Car = ({ className }) => (
   <span className={className}>
-    <svg width="365" height="250">
+    <CarWrapper viewBox="0 0 365 250">
       {/* halo */}
       <ellipse
         rx="40px"
@@ -144,7 +145,7 @@ const Car = ({ className }) => (
         {/* <!-- Red light --> */}
         <circle r="10px" fill={theme.carvana.red.primary} cx="15" cy="140" />
       </g>
-    </svg>
+    </CarWrapper>
   </span>
 );
 
